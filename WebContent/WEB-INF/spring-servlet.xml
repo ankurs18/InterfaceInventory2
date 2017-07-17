@@ -10,6 +10,7 @@
 	<mvc:annotation-driven/>  -->
 	<mvc:default-servlet-handler/>
 	<mvc:annotation-driven/>
+	<mvc:resources mapping="/resources/**" location="/WEB-INF/views/jsp/resources/" cache-period="10000" />
 	<context:component-scan base-package="com.acc.interfaceinventory.controller"></context:component-scan>
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/jsp/" />

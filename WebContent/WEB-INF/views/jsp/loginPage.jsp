@@ -9,7 +9,7 @@
 <div class="container">
 		<header>
 			<img alt="header"
-				src="C:\Users\dipak.p.patil\Documents\Final\InterfaceInventory2\WebContent\WEB-INF\views\jsp\resources\logo_internal.png"
+				src="resources/logo_internal.png"
 				style="width: 100%">
 		</header>
 	</div>

@@ -4,15 +4,17 @@
 <%@page import="com.acc.interfaceinventory.entity.LoginBean"%>  
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+<link rel="stylesheet" type="text/css" href="resources/css/styles.css">
 <title>Spring MVC</title>
 
 </head>
-<body style="background-color: skyblue">
+<body>
 	<div class="container">
 		<header>
 			<img alt="header"
-				src="C:\Users\dipak.p.patil\Documents\Final\InterfaceInventory2\WebContent\WEB-INF\views\jsp\resources\logo_internal.png"
+				src="resources/logo_internal.png"
 				style="width: 100%">
 		</header>
 	</div>
