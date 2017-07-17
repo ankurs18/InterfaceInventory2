@@ -15,23 +15,6 @@ import com.acc.interfaceinventory.service.ServiceImpl;
 public class SearchController {
 
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)  
-    public String home() {  
-        /*ModelAndView mv = new ModelAndView();
-        mv.setViewName("search");
-        return mv;  */
-		
-		return "hello";
-    } 
-	@RequestMapping(value = "/hello.jsp")  
-    public String hello() {  
-        /*ModelAndView mv = new ModelAndView();
-        mv.setViewName("search");
-        return mv;  */
-		
-		return "hello";
-    } 
-	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
     public String searchForm(HttpServletRequest request,
 			HttpServletResponse response) {  
