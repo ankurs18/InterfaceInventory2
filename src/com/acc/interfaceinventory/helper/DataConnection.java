@@ -9,7 +9,7 @@ public class DataConnection {
 
 	public static Connection createConnection() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.jdbc.Driver");
-		connection = DriverManager.getConnection("jdbc:mysql://localhost/demo", "root", "adminadmin");
+		connection = DriverManager.getConnection("jdbc:mysql://localhost/ComPAS", "root", "adminadmin");
 		return connection;
 	}
 }
