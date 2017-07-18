@@ -3,9 +3,9 @@
 <html>
 <head>
 <title>Login</title>
-<link rel = "stylesheet" type="text/css" href="Form.css">
+<link rel = "stylesheet" type="text/css" href="resources/css/styles.css">
 </head>
-<body style="background-color: skyblue">
+<body>
 <div class="container">
 		<header>
 			<img alt="header"
