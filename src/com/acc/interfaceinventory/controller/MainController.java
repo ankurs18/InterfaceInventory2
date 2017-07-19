@@ -25,6 +25,16 @@ public class MainController {
     public String init(Model model) {
       return "welcomePage";
     }
+    
+    @RequestMapping(value = "/AboutInterfaceInventory", method = RequestMethod.GET)
+    public String about(Model model) {
+      return "AboutInterfaceInventory";
+    }
+    
+    @RequestMapping(value = "/logoutSuccessful", method = RequestMethod.GET)
+    public String logout(Model model) {
+      return "logoutSuccessful";
+    }
  
 
     @RequestMapping("/CheckLogin")

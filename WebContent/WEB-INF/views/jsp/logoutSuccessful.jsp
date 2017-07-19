@@ -5,7 +5,13 @@
 <head>
 <title>Logout</title>
 </head>
-<body>
+<body style="background-image: url('resources/images_wel.jpg');">
+<div align="right">
+		<h4>
+			<a href="login" style="color: BLACK">Login | </a>
+			<a href="AboutInterfaceInventory" style="color: BLACK"> About Interface Inventory </a>
+		</h4>
+	</div>
   <h1>Logout Successful!</h1>
 </body>
 </html>
