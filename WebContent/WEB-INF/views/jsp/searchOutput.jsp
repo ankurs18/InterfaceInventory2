@@ -10,14 +10,26 @@
 <link rel = "stylesheet" type="text/css" href="resources/css/styles.css">
 <title>Insert title here</title>
 </head>
-<body style="background-color: skyblue">
-	<div class="container">
+<body style="background-image: url('resources/images_wel.jpg');">
+	<!-- <div class="container">
 		<header> <img alt="header" src="resources/logo_internal.png"
 			style="width: 100%"> </header>
+	</div> -->
+	<div align="right">
+		<table>
+			<tr>
+				<h4>
+					<a href="login" style="color: Black"> Logout | </a> <a
+						href="AboutInterfaceInventory" style="color: Black"> About
+						Interface Inventory </a>
+				</h4>
+			</tr>
+		</table>
+
 	</div>
 
 <div class="outer">
-	<table class="content" width="96%" border="1" align="center">
+	<table class="content" width="auto" border="1" align="center">
 		<tr>
 			<th></th>
 			<th>id</th>
@@ -89,5 +101,10 @@
 
 	</table>
 </div>
+<div class="footer"
+		style="position: absolute; width: 100%; bottom: 0; color: Black">
+		<hr>
+		<footer> &copy; Accenture 2017 </footer>
+	</div>
 </body>
 </html>

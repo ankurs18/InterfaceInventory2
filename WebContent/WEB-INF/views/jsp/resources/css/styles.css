@@ -1,6 +1,6 @@
 .outer{
-  width:500px;
-  height:100px;
+  width:auto;
+  height:auto;
   white-space: nowrap;
   position: relative;
   overflow-x:scroll;

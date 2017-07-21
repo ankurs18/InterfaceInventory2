@@ -14,7 +14,6 @@ import com.acc.interfaceinventory.service.LoginServiceImpl;
 
 @Controller
 public class MainController {
- 
     @RequestMapping(value = { "/", "/login" }, method = RequestMethod.GET)
     public String welcomePage(Model model) {
     	  model.addAttribute("msg", "Please Enter Your Login Details");
@@ -45,7 +44,10 @@ public class MainController {
     	String password = request.getParameter("password");
     	LoginBean loginBean = loginService.checkLogin(username, password);
     	if(loginBean== null)
-    		mv.setViewName("403Page");
+    	{
+    		mv.setViewName("loginPage");
+    	mv.addObject("message", "UserName or Password wrong!!");
+    	}
     	else 
     	{
     		mv.setViewName("welcomePage");

@@ -15,7 +15,7 @@
 		<table>
 			<tr>
 				<h4>
-					<a href="logoutSuccessful" style="color: Black"> Logout | </a> <a
+					<a href="login" style="color: Black"> Logout | </a> <a
 						href="AboutInterfaceInventory" style="color: Black"> About
 						Interface Inventory </a>
 				</h4>
@@ -23,12 +23,12 @@
 		</table>
 
 	</div>
-	<div class="container">
+	<!-- <div class="container">
 		<header>
 			<img alt="header" src="resources/logo_internal.png"
 				style="width: 100%">
 		</header>
-	</div>
+	</div> -->
 
 	<h1>
 		<%
@@ -48,7 +48,8 @@
 					value="Modify"></a></td>
 		</tr>
 	</table>
-	<div class="footbar">
+	<div class="footbar" style="position: absolute;
+  width: 100%;bottom: 0;">
 		<footer> &copy; Accenture 2017 </footer>
 	</div>
 </body>
