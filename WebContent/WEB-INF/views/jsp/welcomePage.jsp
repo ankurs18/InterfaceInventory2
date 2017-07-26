@@ -15,7 +15,7 @@
 		<table>
 			<tr>
 				<h4>
-					<a href="login" style="color: Black"> Logout | </a> <a
+					<a href="logoutSuccessful" style="color: Black"> Logout | </a> <a
 						href="AboutInterfaceInventory" style="color: Black"> About
 						Interface Inventory </a>
 				</h4>
@@ -23,12 +23,12 @@
 		</table>
 
 	</div>
-	<!-- <div class="container">
+	<div class="container">
 		<header>
 			<img alt="header" src="resources/logo_internal.png"
 				style="width: 100%">
 		</header>
-	</div> -->
+	</div>
 
 	<h1>
 		<%
@@ -47,9 +47,13 @@
 			<td><a href="search"><input type="submit" name="submit"
 					value="Modify"></a></td>
 		</tr>
+		<tr>
+			<td>For Adding a service click here -</td>
+			<td><a href="addservice"><input type="submit" name="submit"
+					value="Add"></a></td>
+		</tr>
 	</table>
-	<div class="footbar" style="position: absolute;
-  width: 100%;bottom: 0;">
+	<div class="footbar">
 		<footer> &copy; Accenture 2017 </footer>
 	</div>
 </body>
