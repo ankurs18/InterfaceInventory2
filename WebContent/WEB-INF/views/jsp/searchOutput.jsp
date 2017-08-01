@@ -46,6 +46,7 @@
 				<tr>
 					<th></th>
 					<th>id</th>
+					<th>sourceInventory</th>
 					<th>interfacename</th>
 					<th>description</th>
 					<th>interface_category</th>
@@ -81,6 +82,7 @@
 						<td><input type="radio" name="radioButton"
 							value="${status.count}"></td>
 						<td><jstlcore:out value="${Service['id']}" /></td>
+						<td><jstlcore:out value="${Service['source_inventory']}" /></td>
 						<td><jstlcore:out value="${Service['interfacename']}" /></td>
 						<td><jstlcore:out value="${Service['description']}" /></td>
 						<td><jstlcore:out value="${Service['interface_category']}" /></td>

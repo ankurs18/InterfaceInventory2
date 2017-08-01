@@ -1,5 +1,6 @@
 package com.acc.interfaceinventory.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +18,7 @@ import com.acc.interfaceinventory.service.ServiceImpl;
 @Controller
 public class ServiceController {
 
-	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	@RequestMapping(value = "/search")
 	public String searchForm(HttpServletRequest request, HttpServletResponse response) {
 		/*
 		 * ModelAndView mv = new ModelAndView(); mv.setViewName("search");
@@ -52,9 +53,9 @@ public class ServiceController {
 		
 		if (request.getParameter("action").equals("Modify")) {
 			System.out.println("here" + "modify");
-
-			mv.addObject("Service",service);
-			mv.setViewName("updatePage");
+			
+            mv.addObject("Service",service);
+			mv.setViewName("updateElement");
 		}
 		if (request.getParameter("action").equals("Delete")) {
 			mv.setViewName("searchOutput");
@@ -72,9 +73,65 @@ public class ServiceController {
 		return mv;
 
 	}
-	 @RequestMapping(value = "/AddEl", method = RequestMethod.GET)
-	    public ModelAndView ADD(HttpServletRequest request, HttpServletResponse response) 
-	    {
+	@RequestMapping(value = "/AddEl", method = RequestMethod.POST)
+    public ModelAndView ADD(HttpServletRequest request, HttpServletResponse response) 
+    {
+    	ModelAndView mv = new ModelAndView();
+    	int id = Integer.parseInt(request.getParameter("ID"));
+    	String source_inventory = request.getParameter("SourceInventory");
+    	String Interface_name = request.getParameter("InterfaceName");
+    	String description = request.getParameter("Description");
+    	String Interface_grp = request.getParameter("Interface_group");
+    	String bussiness_func = request.getParameter("BusinessFunction");
+    	String bussiness_process = request.getParameter("BusinessProcess");
+    	String segment = request.getParameter("Segment");
+    	String LOB = request.getParameter("LOB");
+    	String entities = request.getParameter("EntitiesorinformationExchange");
+    	String connection_method = request.getParameter("ConnectionMethod");
+    	String transport = request.getParameter("Transport");
+    	String connection_frequency = request.getParameter("ConnectionFrequency(Trans_Type)");
+    	String data_format = request.getParameter("DataFormat");
+    	String provider_technology = request.getParameter("Provider_Technology");
+    	Boolean scope_r1 = Boolean.parseBoolean(request.getParameter("scope_r1"));
+    	String r1_disposition = request.getParameter("R1_Disposition");
+    	Boolean scope_r2 = Boolean.parseBoolean(request.getParameter("scope_r2"));
+    	String r2_disposition = request.getParameter("R2_Disposition");
+    	String asynch_synch = request.getParameter("Asynch_Synch");
+    	String service_provider = request.getParameter("Service_Provider");
+    	String pattern = request.getParameter("Pattern");
+    	String interface_complexity = request.getParameter("Complexity");
+    	String prov_adap_details = request.getParameter("ProviderDetail");
+    	String steel_thread = request.getParameter("Steel_Thread");
+    	
+    	String modified_comment = request.getParameter("ModifiedComment");
+    	ServiceImpl impl=new ServiceImpl();
+    	Service service =impl.addElement(id, source_inventory, Interface_name, description, Interface_grp, bussiness_func, bussiness_process, segment, LOB, entities, connection_method, transport, connection_frequency, data_format, provider_technology, scope_r1, r1_disposition, scope_r2, r2_disposition, asynch_synch, service_provider, pattern, interface_complexity, prov_adap_details, steel_thread, null, modified_comment);
+    	if(service==null)
+    	{
+    		mv.setViewName("Error");
+    		
+    	}
+    	else
+    		{
+    		List<Service> list= new ArrayList<Service>();
+    		list.add(service);
+    		mv.addObject("message", "Service successfully added.");
+    		request.getSession().setAttribute("allServices", list);
+    		mv.setViewName("searchOutput");
+    	}
+    	
+    	return mv;
+    }
+	    @RequestMapping(value = "/addservice")
+	    public ModelAndView add(HttpServletRequest request, HttpServletResponse response){
+	    	ModelAndView mv = new ModelAndView();
+	    	mv.setViewName("AddElement");
+	    	return mv;
+	    	
+	    }
+	    
+	    @RequestMapping(value = "/modifydata", method = RequestMethod.POST)
+	    public ModelAndView modifydata(HttpServletRequest request, HttpServletResponse response){
 	    	ModelAndView mv = new ModelAndView();
 	    	int id = Integer.parseInt(request.getParameter("ID"));
 	    	String source_inventory = request.getParameter("SourceInventory");
@@ -104,7 +161,7 @@ public class ServiceController {
 	    	
 	    	String modified_comment = request.getParameter("ModifiedComment");
 	    	ServiceImpl impl=new ServiceImpl();
-	    	int result=impl.addElement(id, source_inventory, Interface_name, description, Interface_grp, bussiness_func, bussiness_process, segment, LOB, entities, connection_method, transport, connection_frequency, data_format, provider_technology, scope_r1, r1_disposition, scope_r2, r2_disposition, asynch_synch, service_provider, pattern, interface_complexity, prov_adap_details, steel_thread, null, modified_comment);
+	    	int result=impl.modify(id, source_inventory, Interface_name, description, Interface_grp, bussiness_func, bussiness_process, segment, LOB, entities, connection_method, transport, connection_frequency, data_format, provider_technology, scope_r1, r1_disposition, scope_r2, r2_disposition, asynch_synch, service_provider, pattern, interface_complexity, prov_adap_details, steel_thread, null, modified_comment);
 	    	if(result==0)
 	    	{
 	    		mv.setViewName("Error");
@@ -117,13 +174,9 @@ public class ServiceController {
 	    	}
 	    	
 	    	return mv;
-	    }
-	    @RequestMapping(value = "/addservice", method = RequestMethod.GET)
-	    public ModelAndView add(HttpServletRequest request, HttpServletResponse response){
-	    	ModelAndView mv = new ModelAndView();
-	    	mv.setViewName("AddElement");
-	    	return mv;
 	    	
 	    }
+	    
+	    
 
 }

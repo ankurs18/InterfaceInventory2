@@ -92,14 +92,67 @@ public class ServiceDAO {
 		return status;
 		
 	}
-	public int addEntry(Service service){
+	public Service addEntry(Service service){
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = new Date();
+		java.sql.Date sqlDate = new java.sql.Date(date.getTime()); 
+		service.setLast_modification(sqlDate);
+		try {
+			connection = DataConnection.createConnection();
+		
+		statement = connection.prepareStatement(Constants.GETINSERTQUERY);
+		statement.setString(1, service.getSource_inventory());
+		statement.setString(2, service.getInterfacename());
+		statement.setString(3, service.getDescription());
+		statement.setString(4, service.getInterface_category());
+		statement.setString(5, service.getBusiness_function());
+		statement.setString(6, service.getBusiness_process());
+		statement.setString(7, service.getSegment());
+		statement.setString(8, service.getLob());
+		statement.setString(9, service.getEntities_exchange());
+		statement.setString(10, service.getConnection_method());
+		statement.setString(11, service.getTransport());
+		statement.setString(12, service.getConnection_frequency());
+		statement.setString(13, service.getData_format());
+		statement.setString(14, service.getProvider_technology());
+		statement.setString(15, service.getR1_disposition());
+		statement.setString(16, service.getR2_disposition());
+		statement.setString(17, service.getAsynch_synch());
+		statement.setString(18, service.getService_provider());
+		statement.setString(19, service.getPattern());
+		statement.setString(20, service.getInterface_complexity());
+		statement.setString(21, service.getProvider_detail());
+		statement.setString(22, service.getSteel_thread());
+		statement.setString(23, service.getModified_comment());
+		statement.setBoolean(24, service.isScope_r1());
+		statement.setBoolean(25, service.isScope_r2());
+		statement.setDate(26, service.getLast_modification());
+		statement.setFloat(27, service.getId());
+		int status=statement.executeUpdate();
+		
+		if(status==0)
+			service = null;
+		
+		}
+		 catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return service;
+		
+	}
+	public int modifyEntry(Service service){
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = new Date();
 		java.sql.Date sqlDate = new java.sql.Date(date.getTime()); 
 		try {
 			connection = DataConnection.createConnection();
 		
-		statement = connection.prepareStatement(Constants.GETINSERTQUERY);
+		statement = connection.prepareStatement(Constants.UPDATEQUERY);
 		statement.setString(1, service.getSource_inventory());
 		statement.setString(2, service.getInterfacename());
 		statement.setString(3, service.getDescription());
@@ -144,6 +197,8 @@ public class ServiceDAO {
 		return 0;
 		
 	}
+	
+	
 	public static void main(String args[]){
 		List<Service> list= new ServiceDAO().searchById(479);
 		for(Service s:list)
