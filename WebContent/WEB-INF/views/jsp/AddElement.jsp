@@ -9,8 +9,7 @@
 </head>
 <script type="text/javascript">
 	function validateForm() {
-		var valid = true;
-		/* var id=document.forms["addForm"]["ID"].value; */
+		
 		var id = document.getElementById("ID").value;
 
 		if (id == null || id == "") {

@@ -12,11 +12,31 @@
 <link rel="stylesheet" type="text/css" href="resources/css/styles.css">
 <title>Insert title here</title>
 </head>
+<script type="text/javascript">
+	function validateForm() {
+		var valid = true;
+
+		var radios = document.getElementsByName("radioButton");
+		var i = 0;
+		var formValid = false;
+		 while (!formValid && i < radios.length) {
+		        if (radios[i].checked) 
+		        	formValid = true;
+		       	 i++;        
+		    }
+
+		    if (!formValid) 
+		    	alert("Please select a service to make the update!");
+		    return formValid;
+		    
+		/* if (serviceSelected == null || serviceSelected == "") {
+			alert("Please select a service to update.");
+			return false;
+		} */
+
+	}
+</script>
 <body style="background-image: url('resources/images_wel.jpg');">
-	<!-- <div class="container">
-		<header> <img alt="header" src="resources/logo_internal.png"
-			style="width: 100%"> </header>
-	</div> -->
 	<div align="right">
 		<table>
 			<tr>
@@ -29,11 +49,8 @@
 		</table>
 
 	</div>
-	<%
-		
-	%>
-
-	<form action="update" name="update" method="post">
+	<form action="update" name="update" method="post"
+		onsubmit="return validateForm()">
 		<div class="outer">
 			<table class="content" width="auto" border="1" align="center">
 				<tr>
@@ -42,7 +59,7 @@
 
 
 				</tr>
-				<br/>
+				<br />
 				<tr>
 					<th></th>
 					<th>id</th>
@@ -80,7 +97,7 @@
 
 					<tr>
 						<td><input type="radio" name="radioButton"
-							value="${status.count}"></td>
+							value="${status.count}" id="serviceSelected"></td>
 						<td><jstlcore:out value="${Service['id']}" /></td>
 						<td><jstlcore:out value="${Service['source_inventory']}" /></td>
 						<td><jstlcore:out value="${Service['interfacename']}" /></td>
@@ -112,22 +129,20 @@
 					</tr>
 
 				</jstlcore:forEach>
-				<br/>
-				
+				<br />
+
 			</table>
 		</div>
-		<br/>
-		
-		<input value="Delete" type="submit" name="action" /> <input
+		<br /> <input value="Delete" type="submit" name="action" /> <input
 			value="Modify" type="submit" name="action" />
-			<tr>
-					
-						<%
-							if (request.getAttribute("message") != null)
-								out.print(request.getAttribute("message"));
-						%>
-					
-				</tr>
+		<tr>
+
+			<%
+				if (request.getAttribute("message") != null)
+					out.print(request.getAttribute("message"));
+			%>
+
+		</tr>
 	</form>
 	<div class="footer"
 		style="position: absolute; width: 100%; bottom: 0; color: Black">
