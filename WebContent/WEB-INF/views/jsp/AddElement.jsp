@@ -26,6 +26,18 @@
 </script>
 
 <body style="background-image: url('resources/images_wel.jpg');">
+<div align="right">
+		<table>
+			<tr>
+				<h4>
+					<a href="login" style="color: Black"> Logout | </a> <a
+						href="AboutInterfaceInventory" style="color: Black"> About
+						Interface Inventory </a>
+				</h4>
+			</tr>
+		</table>
+
+	</div>
 	<form method="post" action="AddEl" name="addForm"
 		onsubmit="return validateForm()">
 		            
@@ -164,8 +176,18 @@
 			</table>
 			            
 		</center>
-		<button>submit</button>
-		        
+		<table style="position: centre;">
+		<tr>
+			
+			<td><input type="submit" name="submit" value="submit"></td>
+		</tr>
+	</table>
+		 
 	</form>
+	<!-- <div class="footer"
+		style="position: absolute; width: 100%; bottom: 0; color: Black">
+		<hr>
+		<footer> &copy; Accenture 2017 </footer>
+	</div>        -->
 </body>
 </html>

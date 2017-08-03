@@ -23,12 +23,12 @@
 		</table>
 
 	</div>
-	<div class="container">
+	<!-- <div class="container">
 		<header>
 			<img alt="header" src="resources/logo_internal.png"
 				style="width: 100%">
 		</header>
-	</div>
+	</div> -->
 
 	<h1>
 		<%
@@ -42,18 +42,20 @@
 			<td><a href="search"><input type="submit" name="submit"
 					value="Search"></a></td>
 		</tr>
-		<tr>
+		<!-- <tr>
 			<td>For edit , update , delete of a service click here -</td>
 			<td><a href="search"><input type="submit" name="submit"
 					value="Modify"></a></td>
-		</tr>
+		</tr> -->
 		<tr>
 			<td>For Adding a service click here -</td>
 			<td><a href="addservice"><input type="submit" name="submit"
 					value="Add"></a></td>
 		</tr>
 	</table>
-	<div class="footbar">
+	<div class="footer"
+		style="position: absolute; width: 100%; bottom: 0; color: Black">
+		<hr>
 		<footer> &copy; Accenture 2017 </footer>
 	</div>
 </body>
