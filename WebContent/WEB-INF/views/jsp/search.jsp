@@ -4,66 +4,46 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="./resources/css/styles.css">
 <title>Search</title>
-<script>
-            function validate()
-            {
-                var a = document.getElementById("serviceId");
-                
-var c = document.getElementById("serviceId").value;
-
-                var valid = true;
-                if(serviceId.value.length<=0)
-                    {
-                        alert("Don't leave the field empty!");
-                        valid = false;
-                    }
-                    else{
-                        if(isNaN(c)){
-                            alert("Enter a number");
-                    valid = false;}
-                }
-                return valid;
-            };
+<script>          
+            function check()
+        	{
+        	     if(SearchForm.serviceId.value.length==0)
+        	     {
+        	        document.getElementById('search').innerHTML="Please Enter Numeric Value"; 
+        	        return false;
+        	     }
+        	     if(isNaN(SearchForm.serviceId.value))
+        	     {
+        	        document.getElementById('search').innerHTML="Please Enter Numeric Value";  
+        	        return false;
+        	     }
+        	     else{
+        	    	 return true;
+        	     }
+        	     }       	
 
         </script>
 </head>
-<body style="background-image: url('resources/images_wel.jpg');">
-<div align="right">
-		<table>
-			<tr>
-				<h4>
-					<a href="login" style="color: Black"> Logout | </a> <a
-						href="AboutInterfaceInventory" style="color: Black"> About
-						Interface Inventory </a>
-				</h4>
-			</tr>
-		</table>
-
+<body>
+	<div align="right">
+		<h4 style="font-family:Comic Sans MS;">
+		<a href="welcome">Home</a>
+		<a href="AboutInterfaceInventory">About Interface Inventory</a>
+		<a href="logoutSuccessful">Logout</a> 
+	</h4>
 	</div>
+	<div align="center">
 <h1>Please Enter the Service ID : </h1>
 <form action="performSearch" name="SearchForm" method="post">
-	<input type="text" name="serviceId" id="serviceId"/>	
-	<input value="Search" type="submit" onclick="return validate()"/>
-	<input value="Reset" type="reset">
-	<%-- <table>
-				<tr>
-					<td>
-					<h3 style="color: Red">
-						<%
-							if (request.getAttribute("message") != null)
-								out.print(request.getAttribute("message"));
-						%>
-					</td>
-					</h3>
-				</tr>
-			</table> --%>
-			
-			
-			
-	</form>
+	<input type="text" name="serviceId" id="serviceId" onblur="return check()"/>	
+	<input value="Search" type="submit" onclick="return check()"/>
+	<input value="Reset" type="reset"><br>
+	<span id="search"></span>
+</form>
 	
-	
+	</div>
 	<div class="footer"
 		style="position: absolute; width: 100%; bottom: 0; color: Black">
 		<hr>

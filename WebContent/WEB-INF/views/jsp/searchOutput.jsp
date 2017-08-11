@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="resources/css/styles.css">
+<link rel="stylesheet" type="text/css" href="./resources/css/styles.css">
 <title>Insert title here</title>
 </head>
 <script type="text/javascript">
@@ -26,7 +26,11 @@
 		    }
 
 		    if (!formValid) 
-		    	alert("Please select a service to make the update!");
+		    	/* alert("Please select a service to make the update!"); */
+		    {
+    	        document.getElementById('radioButton').innerHTML="Please select a service to Update or Delete";  
+    	        return false;
+    	     }
 		    return formValid;
 		    
 		/* if (serviceSelected == null || serviceSelected == "") {
@@ -36,19 +40,12 @@
 
 	}
 </script>
-<body style="background-image: url('resources/images_wel.jpg');">
-	<div align="right">
-		<table>
-			<tr>
-				<h4>
-					<a href="login" style="color: Black"> Logout | </a> <a
-						href="AboutInterfaceInventory" style="color: Black"> About
-						Interface Inventory </a>
-				</h4>
-			</tr>
-		</table>
-
-	</div>
+<body>
+	<h4 style="font-family:Comic Sans MS;" align="right">
+		<a href="welcome">Home</a>
+		<a href="AboutInterfaceInventory">About Interface Inventory</a>
+		<a href="logoutSuccessful">Logout</a> 
+	</h4>
 	<form action="update" name="update" method="post"
 		onsubmit="return validateForm()">
 		<div class="outer">
@@ -133,8 +130,9 @@
 
 			</table>
 		</div>
-		<br /> <input value="Delete" type="submit" name="action" /> <input
-			value="Modify" type="submit" name="action" />
+		<br /> <input value="Delete" type="submit" name="action" /> 
+		<input value="Update" type="submit" name="action" />
+		<span id="radioButton"></span>
 		<tr>
 
 			<%

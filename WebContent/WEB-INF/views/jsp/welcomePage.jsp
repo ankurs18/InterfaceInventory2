@@ -6,53 +6,41 @@
 <html lang="en">
 
 <head>
-<link rel="stylesheet" type="text/css" href="resources/css/styles.css">
+<link rel="stylesheet" type="text/css" href="./resources/css/styles.css">
 <title>Spring MVC</title>
 
 </head>
-<body style="background-image: url('resources/images_wel.jpg');">
-	<div align="right">
-		<table>
-			<tr>
-				<h4>
-					<a href="logoutSuccessful" style="color: Black"> Logout | </a> <a
-						href="AboutInterfaceInventory" style="color: Black"> About
-						Interface Inventory </a>
-				</h4>
-			</tr>
-		</table>
-
+<body>
+	<h4 style="font-family:Comic Sans MS;" align="right">
+		<a href="AboutInterfaceInventory">About Interface Inventory</a>
+		<a href="logoutSuccessful">Logout</a> 
+	</h4>	
+	<div>
+		
 	</div>
-	<!-- <div class="container">
-		<header>
-			<img alt="header" src="resources/logo_internal.png"
-				style="width: 100%">
-		</header>
-	</div> -->
-
+	<div align="Center">
+	<%-- 
 	<h1>
 		<%
 			LoginBean bean = (LoginBean) request.getAttribute("User");
 			out.print("Welcome, " + bean.getUsername() + " to Interface Inventory");
 		%>
-	</h1>
+	</h1>  --%>
 	<table>
+		
 		<tr>
-			<td>For any information regarding service click here -</td>
-			<td><a href="search"><input type="submit" name="submit"
+			<td>Search Inventory for Interface</td>
+			<td><a href="search"><input type="submit" name="submit" style="width:100px;"
 					value="Search"></a></td>
 		</tr>
-		<!-- <tr>
-			<td>For edit , update , delete of a service click here -</td>
-			<td><a href="search"><input type="submit" name="submit"
-					value="Modify"></a></td>
-		</tr> -->
 		<tr>
-			<td>For Adding a service click here -</td>
-			<td><a href="addservice"><input type="submit" name="submit"
+			<td>Add Interface details to Inventory</td>
+			<td><a href="addservice"><input type="submit" name="submit" style="width:100px;"
 					value="Add"></a></td>
 		</tr>
 	</table>
+	
+	</div>
 	<div class="footer"
 		style="position: absolute; width: 100%; bottom: 0; color: Black">
 		<hr>

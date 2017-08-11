@@ -3,30 +3,29 @@
 <html>
 <head>
 <title>Login</title>
-<link rel="stylesheet" type="text/css" href="resources/css/styles.css">
+<link rel="stylesheet" type="text/css" href="./resources/css/styles.css">
 <script>
-	function validate() {
-		var user_name = document.getElementById("username");
-		var pass_word = document.getElementById("password");
-		var user = document.getElementById("username").value;
-		var pass = document.getElementById("password").value;
-		var valid = true;
-		if (username.value.length <= 0) {
-			alert("Name can't be blank");
-			valid = false;
-		}
-		if (password.value.length <= 0) {
-			alert("Password can't be blank");
-			valid = false;
-		}
-		return valid;
+function validate(){
+	
+	if(f.username.value.length==0)
+{
+   document.getElementById('usererrorname').innerHTML="Please Enter Username"; 
+ return false;
+}
+}
+	function validatepass(value)
+	{
+		if(f.password.value.length==0)
+	     {
+	        document.getElementById('passerrorname').innerHTML="Please Enter the Password";  
+	     }    
 	}
 </script>
 </head>
-<body style="background-image: url('resources/background.jpg');">
+<body class="bodyStyle">
 	<div align="right">
 		<h4>
-			<a href="AboutInterfaceInventory" style="color: white">About
+			<a href="AboutInterfaceInventory" style="font-family:Comic Sans MS; color: white">About
 				Interface Inventory </a>
 		</h4>
 	</div>
@@ -44,22 +43,29 @@
 			<table style="position: centre">
 				<tr>
 					<td>UserName:</td>
-					<td><input type='text' name='username' id="username"></td>
+					<td><input type='text' name='username' id="username" placeholder="Please Enter Username" onblur="validate()"/>
+					<br>
+					<span id="usererrorname" style="color: white;"></span>
+					</td>
+					
+					
 				</tr>
 				<tr>
 					<td>Password:</td>
-					<td><input type='password' name='password' id="password" /></td>
+					<td><input type='password' name='password' id="password" placeholder="Please Enter Password" onblur="validatepass()"/>
+					<br>
+					<span id="passerrorname" style="color: white;"></span></td>
 				</tr>
 				<table>
 					<tr>
-						<td><input name="submit" type="submit" value="submit"
-							onclick="return validate()" /></td>
+						<td><input name="submit" type="submit" value="submit"/></td>
 						<td><input name="Clear" type="reset" value="Clear" /></td>
 					</tr>
 				</table>
+				
 				<tr>
 					<td>
-						<h3 style="color: Red">
+						<h3 class="messagecolor">
 							<%
 								if (request.getAttribute("message") != null)
 									out.print(request.getAttribute("message"));

@@ -4,16 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="resources/css/styles.css">
+<link rel="stylesheet" type="text/css" href="./resources/css/styles.css">
 <title>Insert title here</title>
 </head>
 <script type="text/javascript">
 	function validateForm() {
 		
-		var id = document.getElementById("ID").value;
-
-		if (id == null || id == "") {
-			alert("Please provide id");
+		var id = document.getElementById("serviceID").value;
+		if (id == null || id == "" || isNaN(id)) {
+			document.getElementById('serviceID').innerHTML="Please Enter Numeric Value";
 			return false;
 		}
 		if(isNaN(id)) 
@@ -25,21 +24,15 @@
 	}
 </script>
 
-<body style="background-image: url('resources/images_wel.jpg');">
-<div align="right">
-		<table>
-			<tr>
-				<h4>
-					<a href="login" style="color: Black"> Logout | </a> <a
-						href="AboutInterfaceInventory" style="color: Black"> About
-						Interface Inventory </a>
-				</h4>
-			</tr>
-		</table>
-
+<body>
+	<div align="right">
+		<h4 style="font-family:Comic Sans MS;">
+		<a href="welcome">Home</a>
+		<a href="AboutInterfaceInventory">About Interface Inventory</a>
+		<a href="logoutSuccessful">Logout</a> 
+	</h4>
 	</div>
-	<form method="post" action="AddEl" name="addForm"
-		onsubmit="return validateForm()">
+	<form method="post" action="AddEl" name="addForm" onsubmit="return validateForm()">
 		            
 		<center>
 			            
@@ -58,7 +51,8 @@
 					                    
 					<tr>
 						<td><b>ID:</b></td>
-						<td><input type='text' name='ID' id="ID"></td>
+						<td><input type='text' name='ID' id="ID">*<span id="serviceID"></span></td>
+						
 					</tr>
 					<tr>
 						<td><b>Source Inventory:</b></td>
@@ -66,7 +60,7 @@
 					</tr>
 					<tr>
 						<td><b>Interface Name:</b></td>
-						<td><input type="text" name='InterfaceName' /></td>
+						<td><input type="text" name='InterfaceName' />*</td>
 					</tr>
 					<tr>
 						<td><b>Description:</b></td>
@@ -90,7 +84,7 @@
 					</tr>
 					<tr>
 						<td><b>LOB:</b></td>
-						<td><input type="text" name='LOB' /></td>
+						<td><input type="text" name='LOB' />*</td>
 					</tr>
 					<tr>
 						<td><b>Entities or information Exchange:</b></td>
@@ -114,14 +108,15 @@
 					</tr>
 					<tr>
 						<td><b>Provider Technology:</b></td>
-						<td><input type="text" name='Provider_Technology' /></td>
+						<td><input type="text" name='Provider_Technology' />*</td>
 					</tr>
 					<tr>
 						<td><b>In Scope for R1:</b></td>
-						<td><select>
+						<td><select style="width:width:200px;">
+								<option value="" disabled selected hidden>Please Choose...</option>
 								<option id="scope_r1" value="true">true</option>
 								<option id="scope_r1" value="false">false</option>
-						</select></td>
+						</select>*</td>
 					</tr>
 					<tr>
 						<td><b>R1 Disposition:</b></td>
@@ -129,10 +124,11 @@
 					</tr>
 					<tr>
 						<td><b>In Scope for R2:</b></td>
-						<td><select name="category" id="scope_r2">
+						<td><select name="category" id="scope_r2" style="width:width:200px;">
+						<option value="" disabled selected hidden>Please Choose...</option>
 								<option>true</option>
 								<option>false</option>
-						</select></td>
+						</select>*</td>
 					</tr>
 					<tr>
 						<td><b>R2 Disposition:</b></td>
@@ -145,7 +141,7 @@
 					</tr>
 					<tr>
 						<td><b>Service Provider:</b></td>
-						<td><input type="text" name='Service_Provider' /></td>
+						<td><input type="text" name='Service_Provider' />*</td>
 					</tr>
 
 					<tr>
