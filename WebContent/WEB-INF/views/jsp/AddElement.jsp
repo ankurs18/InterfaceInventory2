@@ -10,17 +10,11 @@
 <script type="text/javascript">
 	function validateForm() {
 		
-		var id = document.getElementById("serviceID").value;
+		var id = document.getElementById("ID").value;
 		if (id == null || id == "" || isNaN(id)) {
 			document.getElementById('serviceID').innerHTML="Please Enter Numeric Value";
 			return false;
 		}
-		if(isNaN(id)) 
-		{
-		alert("Please enter only numeric characters  for your Id! (Allowed input:0-9)");
-		return false;
-		} 
-
 	}
 </script>
 
@@ -175,7 +169,7 @@
 		<table style="position: centre;">
 		<tr>
 			
-			<td><input type="submit" name="submit" value="submit"></td>
+			<td><input type="submit" name="submit" value="Add Inventory"></td>
 		</tr>
 	</table>
 		 
