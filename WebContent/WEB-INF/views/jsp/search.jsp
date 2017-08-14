@@ -31,7 +31,7 @@
 		<h4 style="font-family:Comic Sans MS;">
 		<a href="welcome">Home</a>
 		<a href="AboutInterfaceInventory">About Interface Inventory</a>
-		<a href="logoutSuccessful">Logout</a> 
+		<a href="login">Logout</a> 
 	</h4>
 	</div>
 	<div align="center">

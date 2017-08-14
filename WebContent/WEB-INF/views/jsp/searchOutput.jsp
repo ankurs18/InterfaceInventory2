@@ -44,7 +44,7 @@
 	<h4 style="font-family:Comic Sans MS;" align="right">
 		<a href="welcome">Home</a>
 		<a href="AboutInterfaceInventory">About Interface Inventory</a>
-		<a href="logoutSuccessful">Logout</a> 
+		<a href="login">Logout</a> 
 	</h4>
 	<form action="update" name="update" method="post"
 		onsubmit="return validateForm()">

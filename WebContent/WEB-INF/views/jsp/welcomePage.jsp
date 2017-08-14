@@ -13,7 +13,7 @@
 <body>
 	<h4 style="font-family:Comic Sans MS;" align="right">
 		<a href="AboutInterfaceInventory">About Interface Inventory</a>
-		<a href="logoutSuccessful">Logout</a> 
+		<a href="login">Logout</a> 
 	</h4>	
 	<div>
 		

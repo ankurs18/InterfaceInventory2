@@ -23,7 +23,7 @@
 		<h4 style="font-family:Comic Sans MS;">
 		<a href="welcome">Home</a>
 		<a href="AboutInterfaceInventory">About Interface Inventory</a>
-		<a href="logoutSuccessful">Logout</a> 
+		<a href="login">Logout</a> 
 	</h4>
 	</div>
 	<form method="post" action="AddEl" name="addForm" onsubmit="return validateForm()">
@@ -166,7 +166,7 @@
 			</table>
 			            
 		</center>
-		<table style="position: centre;">
+		<table align="center">
 		<tr>
 			
 			<td><input type="submit" name="submit" value="Add Inventory"></td>
