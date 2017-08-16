@@ -46,7 +46,7 @@ public class MainController {
     	if(loginBean== null)
     	{
     		mv.setViewName("loginPage");
-    	mv.addObject("message", "UserName or Password wrong!!");
+    	mv.addObject("message", "UserName or Password Incorrect!!");
     	}
     	else 
     	{

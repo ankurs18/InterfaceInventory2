@@ -35,9 +35,15 @@ public class ServiceController {
 		ModelAndView mv = new ModelAndView();
 		// mv.addObject("allServices",
 		// serviceFacade.searchById(Integer.parseInt(request.getParameter("serviceId"))));
-		request.getSession().setAttribute("allServices",
-				serviceFacade.searchById(Integer.parseInt(request.getParameter("serviceId"))));
+		List<Service> list = serviceFacade.searchById(Integer.parseInt(request.getParameter("serviceId")));
+		if(list.size()>0)
+		{request.getSession().setAttribute("allServices",list);
 		mv.setViewName("searchOutput");
+		}
+		else {
+			mv.setViewName("search");
+			mv.addObject("message", "No matching service found.");
+		}
 		return mv;
 
 	}

@@ -5,9 +5,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="./resources/css/styles.css">
 <title>Insert title here</title>
 </head>
 <body>
+	<div align="right">
+		<h4 style="font-family:Comic Sans MS;">
+		<a href="welcome">Home</a>
+		<!-- <a href="AboutInterfaceInventory">About Interface Inventory</a> -->
+		<a href="login">Logout</a> 
+	</h4>
+	</div>
 <form method="post" action="modifydata">
 
             <center>
@@ -131,7 +139,12 @@
                 </tbody>
             </table>
             </center>
-             <button>submit</button>
+             <table align="center">
+		<tr>
+			
+			<td><input type="submit" name="submit" value="Update Inventory"></td>
+		</tr>
+	</table>
         </form>
 </body>
 </html>

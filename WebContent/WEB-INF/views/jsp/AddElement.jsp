@@ -22,7 +22,7 @@
 	<div align="right">
 		<h4 style="font-family:Comic Sans MS;">
 		<a href="welcome">Home</a>
-		<a href="AboutInterfaceInventory">About Interface Inventory</a>
+		<!-- <a href="AboutInterfaceInventory">About Interface Inventory</a> -->
 		<a href="login">Logout</a> 
 	</h4>
 	</div>
@@ -36,7 +36,7 @@
 					                    
 					<tr>
 						                        
-						<th colspan="4"><b>Add New Service</b></th>                     
+						<th colspan="4"><b style="font-family: Lucida Bright;">Add New Service</b></th>                     
 					</tr>
 					                
 				</thead>
@@ -45,12 +45,12 @@
 					                    
 					<tr>
 						<td><b>ID:</b></td>
-						<td><input type='text' name='ID' id="ID">*<span id="serviceID"></span></td>
+						<td><input type='text' name='ID' id="ID"/>*<span id="serviceID"></span></td>
 						
 					</tr>
 					<tr>
 						<td><b>Source Inventory:</b></td>
-						<td><input type="text" name='SourceInventory' /></td>
+						<td><input type="text" name='SourceInventory'id="'SourceInventory'"/></td>
 					</tr>
 					<tr>
 						<td><b>Interface Name:</b></td>

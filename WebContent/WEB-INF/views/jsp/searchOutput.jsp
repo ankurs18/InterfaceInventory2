@@ -43,11 +43,10 @@
 <body>
 	<h4 style="font-family:Comic Sans MS;" align="right">
 		<a href="welcome">Home</a>
-		<a href="AboutInterfaceInventory">About Interface Inventory</a>
+		<!-- <a href="AboutInterfaceInventory">About Interface Inventory</a> -->
 		<a href="login">Logout</a> 
 	</h4>
-	<form action="update" name="update" method="post"
-		onsubmit="return validateForm()">
+	<form action="update" method="post" onsubmit="return validateForm()">
 		<div class="outer">
 			<table class="content" width="auto" border="1" align="center">
 				<tr>
@@ -131,7 +130,7 @@
 			</table>
 		</div>
 		<br /> <input value="Delete" type="submit" name="action" /> 
-		<input value="Update" type="submit" name="action" />
+		<input value="Modify" type="submit" name="action" />
 		<span id="radioButton"></span>
 		<tr>
 

@@ -12,20 +12,23 @@
 </head>
 <body>
 	<h4 style="font-family:Comic Sans MS;" align="right">
-		<a href="AboutInterfaceInventory">About Interface Inventory</a>
+		<!-- <a href="AboutInterfaceInventory">About Interface Inventory</a> -->
 		<a href="login">Logout</a> 
 	</h4>	
 	<div>
 		
 	</div>
 	<div align="Center">
-	<%-- 
+	
 	<h1>
-		<%
+		<%	
 			LoginBean bean = (LoginBean) request.getAttribute("User");
-			out.print("Welcome, " + bean.getUsername() + " to Interface Inventory");
+		if(bean!=null)	
+		out.print("Welcome, " + bean.getUsername() + " to Interface Inventory");
+		else
+			out.print("Welcome, user1 to Interface Inventory");
 		%>
-	</h1>  --%>
+	</h1> 
 	<table>
 		
 		<tr>
