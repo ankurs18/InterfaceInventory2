@@ -5,7 +5,7 @@ import java.sql.Date;
 public class Service {
 
 	private String source_inventory, interfacename, description, interface_category, business_function, business_process, segment, lob, entities_exchange, connection_method, transport, connection_frequency, data_format, provider_technology, r1_disposition, r2_disposition, asynch_synch, service_provider, pattern, interface_complexity, provider_detail, steel_thread, modified_comment;
-	private boolean scope_r1, scope_r2;
+	private boolean scope;
 	private Date last_modification;
 	private int id;
 	public String getSource_inventory() {
@@ -77,12 +77,10 @@ public class Service {
 	public String getModified_comment() {
 		return modified_comment;
 	}
-	public boolean isScope_r1() {
-		return scope_r1;
+	public boolean isScope() {
+		return scope;
 	}
-	public boolean isScope_r2() {
-		return scope_r2;
-	}
+	
 	public Date getLast_modification() {
 		return last_modification;
 	}
@@ -106,7 +104,7 @@ public class Service {
 				+ ", r2_disposition=" + r2_disposition + ", asynch_synch=" + asynch_synch + ", service_provider="
 				+ service_provider + ", pattern=" + pattern + ", interface_complexity=" + interface_complexity
 				+ ", provider_detail=" + provider_detail + ", steel_thread=" + steel_thread + ", modified_comment="
-				+ modified_comment + ", scope_r1=" + scope_r1 + ", scope_r2=" + scope_r2 + ", last_modification="
+				+ modified_comment + ", scope=" + scope +  ", last_modification="
 				+ last_modification + ", id=" + id + "]";
 	}
 	public void setDescription(String description) {
@@ -172,12 +170,10 @@ public class Service {
 	public void setModified_comment(String modified_comment) {
 		this.modified_comment = modified_comment;
 	}
-	public void setScope_r1(boolean scope_r1) {
-		this.scope_r1 = scope_r1;
+	public void setScope(boolean scope) {
+		this.scope = scope;
 	}
-	public void setScope_r2(boolean scope_r2) {
-		this.scope_r2 = scope_r2;
-	}
+	
 	public void setLast_modification(Date last_modification) {
 		this.last_modification = last_modification;
 	}
@@ -189,8 +185,8 @@ public class Service {
 			String connection_method, String transport, String connection_frequency, String data_format,
 			String provider_technology, String r1_disposition, String r2_disposition, String asynch_synch,
 			String service_provider, String pattern, String interface_complexity, String provider_detail,
-			String steel_thread, String modified_comment, boolean scope_r1, boolean scope_r2, Date last_modification,
-			int id) {
+			String steel_thread, String modified_comment, Date last_modification,
+			int id, boolean scope) {
 		super();
 		this.source_inventory = source_inventory;
 		this.interfacename = interfacename;
@@ -215,9 +211,9 @@ public class Service {
 		this.provider_detail = provider_detail;
 		this.steel_thread = steel_thread;
 		this.modified_comment = modified_comment;
-		this.scope_r1 = scope_r1;
-		this.scope_r2 = scope_r2;
+		
 		this.last_modification = last_modification;
 		this.id = id;
+		this.scope = scope;
 	}
 }

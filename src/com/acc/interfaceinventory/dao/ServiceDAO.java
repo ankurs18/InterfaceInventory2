@@ -30,7 +30,7 @@ public class ServiceDAO {
 		resultSet = statement.executeQuery();
 		
 		while (resultSet.next()) {
-			service = new Service(resultSet.getString("source_inventory"), resultSet.getString("interfacename"), resultSet.getString("description"), resultSet.getString("interface_category"), resultSet.getString("business_function"), resultSet.getString("business_process"), resultSet.getString("segment"), resultSet.getString("lob"), resultSet.getString("entities_exchange"), resultSet.getString("connection_method"), resultSet.getString("transport"), resultSet.getString("connection_frequency"), resultSet.getString("data_format"), resultSet.getString("provider_technology"), resultSet.getString("r1_disposition"), resultSet.getString("r2_disposition"), resultSet.getString("asynch_synch"), resultSet.getString("service_provider"), resultSet.getString("pattern"), resultSet.getString("interface_complexity"), resultSet.getString("provider_detail"), resultSet.getString("steel_thread"), resultSet.getString("modified_comment"), resultSet.getBoolean("scope_r1"), resultSet.getBoolean("scope_r2"), resultSet.getDate("last_modification"), resultSet.getInt("id"));
+			service = new Service(resultSet.getString("source_inventory"), resultSet.getString("interfacename"), resultSet.getString("description"), resultSet.getString("interface_category"), resultSet.getString("business_function"), resultSet.getString("business_process"), resultSet.getString("segment"), resultSet.getString("lob"), resultSet.getString("entities_exchange"), resultSet.getString("connection_method"), resultSet.getString("transport"), resultSet.getString("connection_frequency"), resultSet.getString("data_format"), resultSet.getString("provider_technology"), resultSet.getString("r1_disposition"), resultSet.getString("r2_disposition"), resultSet.getString("asynch_synch"), resultSet.getString("service_provider"), resultSet.getString("pattern"), resultSet.getString("interface_complexity"), resultSet.getString("provider_detail"), resultSet.getString("steel_thread"), resultSet.getString("modified_comment"), resultSet.getDate("last_modification"), resultSet.getInt("id") , resultSet.getBoolean("scope"));
 			listServices.add(service);
 		}
 		
@@ -74,10 +74,9 @@ public class ServiceDAO {
 		statement.setString(21, service.getProvider_detail());
 		statement.setString(22, service.getSteel_thread());
 		statement.setString(23, service.getModified_comment());
-		statement.setBoolean(24, service.isScope_r1());
-		statement.setBoolean(25, service.isScope_r2());
-		statement.setDate(26, service.getLast_modification());
-		statement.setInt(27, service.getId());
+		statement.setBoolean(24, service.isScope());
+		statement.setDate(25, service.getLast_modification());
+		statement.setInt(26, service.getId());
 		status = statement.executeUpdate();
 		
 		
@@ -124,10 +123,10 @@ public class ServiceDAO {
 		statement.setString(21, service.getProvider_detail());
 		statement.setString(22, service.getSteel_thread());
 		statement.setString(23, service.getModified_comment());
-		statement.setBoolean(24, service.isScope_r1());
-		statement.setBoolean(25, service.isScope_r2());
-		statement.setDate(26, service.getLast_modification());
-		statement.setFloat(27, service.getId());
+		statement.setBoolean(24, service.isScope());
+		
+		statement.setDate(25, service.getLast_modification());
+		statement.setFloat(26, service.getId());
 		int status=statement.executeUpdate();
 		
 		if(status==0)
@@ -176,10 +175,9 @@ public class ServiceDAO {
 		statement.setString(21, service.getProvider_detail());
 		statement.setString(22, service.getSteel_thread());
 		statement.setString(23, service.getModified_comment());
-		statement.setBoolean(24, service.isScope_r1());
-		statement.setBoolean(25, service.isScope_r2());
-		statement.setDate(26, sqlDate);
-		statement.setFloat(27, service.getId());
+		statement.setBoolean(24, service.isScope());
+		statement.setDate(25, sqlDate);
+		statement.setFloat(26, service.getId());
 		int a=statement.executeUpdate();
 		
 		return a;

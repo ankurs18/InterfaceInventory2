@@ -1,5 +1,6 @@
 package com.acc.interfaceinventory.controller;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -98,9 +99,10 @@ public class ServiceController {
     	String connection_frequency = request.getParameter("ConnectionFrequency(Trans_Type)");
     	String data_format = request.getParameter("DataFormat");
     	String provider_technology = request.getParameter("Provider_Technology");
-    	Boolean scope_r1 = Boolean.parseBoolean(request.getParameter("scope_r1"));
+    	System.out.println(request.getParameter("Scope"));
+    	Boolean scope = request.getParameter("Scope").equals("r1");
     	String r1_disposition = request.getParameter("R1_Disposition");
-    	Boolean scope_r2 = Boolean.parseBoolean(request.getParameter("scope_r2"));
+    	
     	String r2_disposition = request.getParameter("R2_Disposition");
     	String asynch_synch = request.getParameter("Asynch_Synch");
     	String service_provider = request.getParameter("Service_Provider");
@@ -111,7 +113,7 @@ public class ServiceController {
     	
     	String modified_comment = request.getParameter("ModifiedComment");
     	ServiceImpl impl=new ServiceImpl();
-    	Service service =impl.addElement(id, source_inventory, Interface_name, description, Interface_grp, bussiness_func, bussiness_process, segment, LOB, entities, connection_method, transport, connection_frequency, data_format, provider_technology, scope_r1, r1_disposition, scope_r2, r2_disposition, asynch_synch, service_provider, pattern, interface_complexity, prov_adap_details, steel_thread, null, modified_comment);
+    	Service service =impl.addElement(id, source_inventory, Interface_name, description, Interface_grp, bussiness_func, bussiness_process, segment, LOB, entities, connection_method, transport, connection_frequency, data_format, provider_technology, r1_disposition, r2_disposition, asynch_synch, service_provider, pattern, interface_complexity, prov_adap_details, steel_thread, (Date)null, modified_comment, scope);
     	if(service==null)
     	{
     		mv.setViewName("Error");
@@ -164,10 +166,11 @@ public class ServiceController {
 	    	String interface_complexity = request.getParameter("Complexity");
 	    	String prov_adap_details = request.getParameter("ProviderDetail");
 	    	String steel_thread = request.getParameter("Steel_Thread");
+	    	boolean scope = request.getParameter("Scope").equals("r1");
 	    	
 	    	String modified_comment = request.getParameter("ModifiedComment");
 	    	ServiceImpl impl=new ServiceImpl();
-	    	int result=impl.modify(id, source_inventory, Interface_name, description, Interface_grp, bussiness_func, bussiness_process, segment, LOB, entities, connection_method, transport, connection_frequency, data_format, provider_technology, scope_r1, r1_disposition, scope_r2, r2_disposition, asynch_synch, service_provider, pattern, interface_complexity, prov_adap_details, steel_thread, null, modified_comment);
+	    	int result=impl.modify(id, source_inventory, Interface_name, description, Interface_grp, bussiness_func, bussiness_process, segment, LOB, entities, connection_method, transport, connection_frequency, data_format, provider_technology,r1_disposition, r2_disposition, asynch_synch, service_provider, pattern, interface_complexity, prov_adap_details, steel_thread, (Date)null, modified_comment, scope);
 	    	if(result==0)
 	    	{
 	    		mv.setViewName("Error");

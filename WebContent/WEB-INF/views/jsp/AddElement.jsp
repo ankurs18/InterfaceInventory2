@@ -12,10 +12,32 @@
 	function validateForm() {
 		
 		var id = document.getElementById("ID").value;
+		var interfaceName = document.getElementById("interfaceName").value;
+		var LOB = document.getElementById("LOB").value;
+		var ddlview = document.getElementById("ddl").value;
+		var ProviderTechnology = document.getElementById("providerTechnology").value;
 		if (id == null || id == "" || isNaN(id)) {
-			document.getElementById('serviceID').innerHTML="Please Enter Numeric Value";
+			document.getElementById('serviceID').innerHTML="ID is Mandatory field , Please Enter Numeric Value";
 			return false;
 		}
+		if(interfaceName == null || interfaceName ==""){
+			document.getElementById('InterfaceName').innerHTML="Please provide Interface Name";
+			return false;
+		}
+		if(LOB == null || LOB ==""){
+			document.getElementById('lob').innerHTML="Line of Business is mandatory , Please provide.";
+			return false;
+		}
+		if(ProviderTechnology == null || ProviderTechnology ==""){
+			document.getElementById('ProviderTechnology').innerHTML="Please provide the technology.";
+			return false;
+		}
+		
+		if(ddl == 0) //for text use if(strUser1=="Select")
+		{
+			document.getElementById('ddlview').innerHTML="Please provide Scope.";
+		}
+		
 	}
 </script>
 
@@ -55,7 +77,7 @@
 					</tr>
 					<tr>
 						<td><b>Interface Name:</b></td>
-						<td><input type="text" name='InterfaceName' />*</td>
+						<td><input type="text" name='InterfaceName' id="interfaceName"/>*<span id="InterfaceName"></span></td>
 					</tr>
 					<tr>
 						<td><b>Description:</b></td>
@@ -79,7 +101,7 @@
 					</tr>
 					<tr>
 						<td><b>LOB:</b></td>
-						<td><input type="text" name='LOB' />*</td>
+						<td><input type="text" name='LOB' id="LOB" />*<span id="lob"></span> </td>
 					</tr>
 					<tr>
 						<td><b>Entities or information Exchange:</b></td>
@@ -103,28 +125,36 @@
 					</tr>
 					<tr>
 						<td><b>Provider Technology:</b></td>
-						<td><input type="text" name='Provider_Technology' />*</td>
+						<td><input type="text" name='Provider_Technology' id="providerTechnology" />*<span id="ProviderTechnology"></span> </td>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<td><b>In Scope for R1:</b></td>
 						<td><select style="width:width:200px;">
-								<option value="" disabled selected hidden>Please Choose...</option>
+								<option value="" id="ddl" disabled selected hidden>Please Choose...</option>
 								<option id="scope_r1" value="true">true</option>
 								<option id="scope_r1" value="false">false</option>
+						</select>*</td>
+					</tr> -->
+					<tr>
+						<td><b>Scope</b></td>
+						<td><select style="width:width:200px;" name="Scope">
+								<option value="" id="ddl" disabled selected hidden>Please Choose...</option>
+								<option id="scope_r1" value="r1">Release 1</option>
+								<option id="scope_r1" value="r2">Release 2</option>
 						</select>*</td>
 					</tr>
 					<tr>
 						<td><b>R1 Disposition:</b></td>
 						<td><input type="text" name='R1_Disposition' /></td>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<td><b>In Scope for R2:</b></td>
 						<td><select name="category" id="scope_r2" style="width:width:200px;">
 						<option value="" disabled selected hidden>Please Choose...</option>
 								<option>true</option>
 								<option>false</option>
 						</select>*</td>
-					</tr>
+					</tr> -->
 					<tr>
 						<td><b>R2 Disposition:</b></td>
 						<td><input type="text" name='R2_Disposition' /></td>

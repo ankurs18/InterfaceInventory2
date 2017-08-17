@@ -75,9 +75,9 @@
 					<th>connection_frequency</th>
 					<th>data_format</th>
 					<th>provider_technology</th>
-					<th>scope_r1</th>
+					<th>Scope</th>
 					<th>r1_disposition</th>
-					<th>scope_r2</th>
+					
 					<th>r2_disposition</th>
 					<th>asynch_synch</th>
 					<th>service_provider</th>
@@ -111,9 +111,12 @@
 						<td><jstlcore:out value="${Service['connection_frequency']}" /></td>
 						<td><jstlcore:out value="${Service['data_format']}" /></td>
 						<td><jstlcore:out value="${Service['provider_technology']}" /></td>
-						<td><jstlcore:out value="${Service['scope_r1']}" /></td>
+						<td>
+							<jstlcore:if test="${Service['scope']}"> Release 1</jstlcore:if>
+							<jstlcore:if test="${!Service['scope']}"> Release 2</jstlcore:if>
+						</td>
 						<td><jstlcore:out value="${Service['r1_disposition']}" /></td>
-						<td><jstlcore:out value="${Service['scope_r2']}" /></td>
+						
 						<td><jstlcore:out value="${Service['r2_disposition']}" /></td>
 						<td><jstlcore:out value="${Service['asynch_synch']}" /></td>
 						<td><jstlcore:out value="${Service['service_provider']}" /></td>
