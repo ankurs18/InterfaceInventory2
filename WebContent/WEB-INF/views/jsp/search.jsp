@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="./resources/css/styles.css">
+<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <title>Search</title>
 <script>          
             function check()
@@ -26,7 +27,7 @@
 
         </script>
 </head>
-<body>
+<body style="font-family: 'Aclonica';">
 	<div align="right">
 		<h4 style="font-family:Comic Sans MS;">
 		<a href="welcome">Home</a>
@@ -37,10 +38,12 @@
 	<div align="center">
 <h1>Please Enter the Service ID : </h1>
 <form action="performSearch" name="SearchForm" method="post">
-	<input type="text" name="serviceId" id="serviceId" onblur="return check()"/>	
-	<input value="Search" type="submit" onclick="return check()"/>
-	<input value="Reset" type="reset"><br>
+	<input style="font-family: 'Aclonica';" type="text" name="serviceId" id="serviceId" onblur="return check()"/>	
+	<input style="font-family: 'Aclonica';" value="Search" type="submit" onclick="return check()"/>
+	<input style="font-family: 'Aclonica';" value="Reset" type="reset"><br>
+	<br/>
 	<span id="search"></span>
+	<br/>
 	<br/>
 	<%
 				if (request.getAttribute("message") != null)

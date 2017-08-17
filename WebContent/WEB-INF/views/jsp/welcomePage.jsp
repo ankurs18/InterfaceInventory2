@@ -7,11 +7,16 @@
 
 <head>
 <link rel="stylesheet" type="text/css" href="./resources/css/styles.css">
+<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <title>Spring MVC</title>
 
 </head>
-<body>
-	<h4 style="font-family:Comic Sans MS;" align="right">
+<body style="font-family: 'Aclonica';">
+	<header>
+		<!-- <img alt="header" src="./resources/_hea.jpg" style="width: 100%; height: 180px;"> -->
+		
+	</header>
+	<h4 align="right">
 		<!-- <a href="AboutInterfaceInventory">About Interface Inventory</a> -->
 		<a href="login">Logout</a> 
 	</h4>	
@@ -33,12 +38,12 @@
 		
 		<tr>
 			<td>Search Inventory for Interface</td>
-			<td><a href="search"><input type="submit" name="submit" style="width:100px;"
+			<td><a href="search"><input type="submit" name="submit" style="width:100px; font-family: 'Aclonica'"
 					value="Search"></a></td>
 		</tr>
 		<tr>
 			<td>Add Interface details to Inventory</td>
-			<td><a href="addservice"><input type="submit" name="submit" style="width:100px;"
+			<td><a href="addservice"><input type="submit" name="submit" style="width:100px; font-family: 'Aclonica'"
 					value="Add"></a></td>
 		</tr>
 	</table>

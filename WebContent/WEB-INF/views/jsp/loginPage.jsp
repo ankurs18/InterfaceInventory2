@@ -4,6 +4,8 @@
 <head>
 <title>Login</title>
 <link rel="stylesheet" type="text/css" href="./resources/css/styles.css">
+<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
 <script>
 function validate(){
 	
@@ -22,7 +24,7 @@ function validate(){
 	}
 </script>
 </head>
-<body class="bodyStyle">
+<body style="font-family: 'Aclonica'" class="bodyStyle">
 	<div align="right">
 		<h4>
 			<a href="AboutInterfaceInventory" style="font-family:Comic Sans MS; color: white">About
@@ -58,8 +60,8 @@ function validate(){
 				</tr>
 				<table>
 					<tr>
-						<td><input name="submit" type="submit" value="submit"/></td>
-						<td><input name="Clear" type="reset" value="Clear" /></td>
+						<td><input style="font-family: audiowide;" name="submit" type="submit" value="submit"/></td>
+						<td><input style="font-family: audiowide;" name="Clear" type="reset" value="Clear" /></td>
 					</tr>
 				</table>
 				

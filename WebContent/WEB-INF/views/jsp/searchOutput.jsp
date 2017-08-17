@@ -10,6 +10,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="./resources/css/styles.css">
+<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
 <title>Insert title here</title>
 </head>
 <script type="text/javascript">
@@ -40,7 +42,7 @@
 
 	}
 </script>
-<body>
+<body style="font-family: 'Aclonica';">
 	<h4 style="font-family:Comic Sans MS;" align="right">
 		<a href="welcome">Home</a>
 		<!-- <a href="AboutInterfaceInventory">About Interface Inventory</a> -->
@@ -129,8 +131,8 @@
 
 			</table>
 		</div>
-		<br /> <input value="Delete" type="submit" name="action" /> 
-		<input value="Modify" type="submit" name="action" />
+		<br /> <input style="font-family: Audiowide;" value="Delete" type="submit" name="action" /> 
+		<input style="font-family: Audiowide;" value="Modify" type="submit" name="action" />
 		<span id="radioButton"></span>
 		<tr>
 

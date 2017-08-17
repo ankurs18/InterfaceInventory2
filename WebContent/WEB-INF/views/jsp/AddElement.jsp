@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="./resources/css/styles.css">
+<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <title>Insert title here</title>
 </head>
 <script type="text/javascript">
@@ -18,7 +19,7 @@
 	}
 </script>
 
-<body>
+<body style="font-family: 'Aclonica'">
 	<div align="right">
 		<h4 style="font-family:Comic Sans MS;">
 		<a href="welcome">Home</a>
