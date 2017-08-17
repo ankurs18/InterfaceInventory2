@@ -91,17 +91,23 @@
 				<td><input type="text" name='Provider_Technology' value="${Service['provider_technology']}"/></td>
 			</tr>
 			<tr>
-				<td><b>In Scope for R1:</b></td>
-				<td><input type="text" name='scope_r1' value="${Service['scope_r1']}"/></td>
-			</tr>
+						<td><b>Scope</b></td>
+						<td><select style="width:width:200px;" name="Scope">
+								<c:if test="${Service['scope']}">
+									<option id="scope_r1" value="r1" selected>Release 1</option>
+									<option id="scope_r1" value="r2">Release 2</option>
+								</c:if>
+								<c:if test="${!Service['scope']}">
+									<option id="scope_r1" value="r1">Release 1</option>
+									<option id="scope_r1" value="r2" selected>Release 2</option>
+								</c:if>
+						</select>*</td>
+					</tr>
 		<tr>
 				<td><b>R1 Disposition:</b></td>
 				<td><input type="text" name='R1_Disposition' value="${Service['r1_disposition']}"/></td>
 			</tr>
-			<tr>
-				<td><b>In Scope for R2:</b></td>
-				<td><input type="text" name='scope_r2' value="${Service['scope_r2']}"/></td>
-    </tr>
+			
     <tr>
 				<td><b>R2 Disposition:</b></td>
 				<td><input type="text" name='R2_Disposition' value="${Service['r2_disposition']}"/></td>

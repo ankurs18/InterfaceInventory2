@@ -57,7 +57,7 @@ public class ServiceController {
 		System.out.println("size"+list.size());
 		System.out.println("pos"+request.getParameter("radioButton"));
 		Service service = list.get(Integer.parseInt(request.getParameter("radioButton"))-1);
-		
+		System.out.println(service.toString());
 		if (request.getParameter("action").equals("Modify")) {
 			System.out.println("here" + "modify");
 			
