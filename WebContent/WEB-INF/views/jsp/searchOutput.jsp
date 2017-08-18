@@ -10,7 +10,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="./resources/css/styles.css">
-<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
 <title>Insert title here</title>
 </head>
@@ -42,7 +42,7 @@
 
 	}
 </script>
-<body style="font-family: 'Aclonica';">
+<body style="font-family: 'Amaranth';">
 	<h4 style="font-family:Comic Sans MS;" align="right">
 		<a href="welcome">Home</a>
 		<!-- <a href="AboutInterfaceInventory">About Interface Inventory</a> -->

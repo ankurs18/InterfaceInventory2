@@ -7,13 +7,13 @@
 
 <head>
 <link rel="stylesheet" type="text/css" href="./resources/css/styles.css">
-<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
 <title>Spring MVC</title>
 
 </head>
-<body style="font-family: 'Aclonica';">
-	<header>
-		<!-- <img alt="header" src="./resources/_hea.jpg" style="width: 100%; height: 180px;"> -->
+<body style="font-family: 'Amaranth';">
+	<header style="border-style:solid;">
+		<img alt="header" src="./resources/header_logo.png" style="width: 100%; height: 190px;">
 		
 	</header>
 	<h4 align="right">

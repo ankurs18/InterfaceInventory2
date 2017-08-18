@@ -6,10 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="./resources/css/styles.css">
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
 <title>About Interface Inventory</title>
 </head>
-<body style="font-family: 'Aclonica'">
+<body style="font-family: 'Amaranth'">
 <div align="right">
 		<h4>
 		<a href="login">Home</a>

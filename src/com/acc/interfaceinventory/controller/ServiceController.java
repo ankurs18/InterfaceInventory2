@@ -178,8 +178,8 @@ public class ServiceController {
 	    	}
 	    	else if(result==1)
 	    	{
-	    		
-	    		mv.setViewName("NewFile");
+	    		mv.addObject("Service", impl.searchById(id).get(0));
+	    		mv.setViewName("updateElement");
 	    	}
 	    	
 	    	return mv;
