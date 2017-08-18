@@ -14,8 +14,9 @@
 		var id = document.getElementById("ID").value;
 		var interfaceName = document.getElementById("interfaceName").value;
 		var LOB = document.getElementById("LOB").value;
-		var ddlview = document.getElementById("ddl").value;
+		var ddlview = (addForm.Scope.value);
 		var ProviderTechnology = document.getElementById("providerTechnology").value;
+		var ServiceProvider = document.getElementById("serviceprovider").value;
 		if (id == null || id == "" || isNaN(id)) {
 			document.getElementById('serviceID').innerHTML="ID is Mandatory field , Please Enter Numeric Value";
 			return false;
@@ -33,9 +34,15 @@
 			return false;
 		}
 		
-		if(ddl == 0) //for text use if(strUser1=="Select")
+		if(ddlview == "-1") //for text use if(strUser1=="Select")
 		{
 			document.getElementById('ddlview').innerHTML="Please provide Scope.";
+			
+			return false;
+		}
+		if(ServiceProvider == null || ServiceProvider ==""){
+			document.getElementById('ServiceProvider').innerHTML="please Enter service Provider.";
+			return false;
 		}
 		
 	}
@@ -48,6 +55,7 @@
 		<!-- <a href="AboutInterfaceInventory">About Interface Inventory</a> -->
 		<a href="login">Logout</a> 
 	</h4>
+	<h4 style="color: red;">* is mandatory</h4>
 	</div>
 	<form method="post" action="AddEl" name="addForm" onsubmit="return validateForm()">
 		            
@@ -138,10 +146,10 @@
 					<tr>
 						<td><b>Scope</b></td>
 						<td><select style="width:width:200px;" name="Scope">
-								<option value="" id="ddl" disabled selected hidden>Please Choose...</option>
+								<option value="-1" disabled selected hidden>Please Choose...</option>
 								<option id="scope_r1" value="r1">Release 1</option>
 								<option id="scope_r1" value="r2">Release 2</option>
-						</select>*</td>
+						</select>*<span id="ddlview"></span> </td>
 					</tr>
 					<tr>
 						<td><b>R1 Disposition:</b></td>
@@ -166,7 +174,7 @@
 					</tr>
 					<tr>
 						<td><b>Service Provider:</b></td>
-						<td><input type="text" name='Service_Provider' />*</td>
+						<td><input type="text" name='Service_Provider' id ="serviceprovider"/>*<span id="ServiceProvider"></span> </td>
 					</tr>
 
 					<tr>
@@ -201,6 +209,10 @@
 		<tr>
 			
 			<td><input type="submit" name="submit" value="Add Inventory"></td>
+							<%
+								if (request.getAttribute("message") != null)
+									out.print(request.getAttribute("message"));
+							%>	
 		</tr>
 	</table>
 		 

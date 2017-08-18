@@ -156,9 +156,9 @@ public class ServiceController {
 	    	String connection_frequency = request.getParameter("ConnectionFrequency(Trans_Type)");
 	    	String data_format = request.getParameter("DataFormat");
 	    	String provider_technology = request.getParameter("Provider_Technology");
-	    	Boolean scope_r1 = Boolean.parseBoolean(request.getParameter("scope_r1"));
+	    	
 	    	String r1_disposition = request.getParameter("R1_Disposition");
-	    	Boolean scope_r2 = Boolean.parseBoolean(request.getParameter("scope_r2"));
+	    	
 	    	String r2_disposition = request.getParameter("R2_Disposition");
 	    	String asynch_synch = request.getParameter("Asynch_Synch");
 	    	String service_provider = request.getParameter("Service_Provider");
