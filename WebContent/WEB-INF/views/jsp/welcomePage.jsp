@@ -12,8 +12,8 @@
 
 </head>
 <body style="font-family: 'Amaranth';">
-	<header style="border-style:solid;">
-		<img alt="header" src="./resources/header_logo.png" style="width: 100%; height: 190px;">
+	<header>
+		<img alt="header" src="./resources/Banner_3.JPG" style="width: 100%; height: 150px;">
 		
 	</header>
 	<h4 align="right">

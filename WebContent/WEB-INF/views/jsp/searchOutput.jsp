@@ -43,6 +43,10 @@
 	}
 </script>
 <body style="font-family: 'Amaranth';">
+<header>
+		<img alt="header" src="./resources/Banner_3.JPG" style="width: 100%; height: 150px;">
+		
+	</header>
 	<h4 style="font-family:Comic Sans MS;" align="right">
 		<a href="welcome">Home</a>
 		<!-- <a href="AboutInterfaceInventory">About Interface Inventory</a> -->

@@ -179,7 +179,8 @@ public class ServiceController {
 	    	else if(result==1)
 	    	{
 	    		mv.addObject("Service", impl.searchById(id).get(0));
-	    		mv.setViewName("updateElement");
+	    		mv.setViewName("search");
+	    		mv.addObject("message","Service updated Sucessfully!");
 	    	}
 	    	
 	    	return mv;

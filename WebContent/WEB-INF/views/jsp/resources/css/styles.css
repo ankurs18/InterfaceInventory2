@@ -19,7 +19,8 @@
    	color: #FFF;
    }
    body{
-   	 background-image: url('../bg-9-full.jpg');
+   	 /* background-image: url('../bg-9-full.jpg'); */
+   	 background-color : #faebd7;
    	 font-family: 'Aclonica';
    	 font-family: Aclonica;
    }

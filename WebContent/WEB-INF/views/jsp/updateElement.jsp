@@ -90,7 +90,7 @@
 				<td><b>Provider Technology:</b></td>
 				<td><input type="text" name='Provider_Technology' value="${Service['provider_technology']}"/></td>
 			</tr>
-			<tr>
+				<tr>
 						<td><b>Scope</b></td>
 						<td><select style="width:width:200px;" name="Scope">
 								<c:if test="${Service['scope']}">
@@ -101,14 +101,14 @@
 									<option id="scope_r1" value="r1">Release 1</option>
 									<option id="scope_r1" value="r2" selected>Release 2</option>
 								</c:if>
-						</select>*</td>
+						</select></td>
 					</tr>
-		<tr>
+			<tr>
 				<td><b>R1 Disposition:</b></td>
 				<td><input type="text" name='R1_Disposition' value="${Service['r1_disposition']}"/></td>
 			</tr>
 			
-    <tr>
+   			 <tr>
 				<td><b>R2 Disposition:</b></td>
 				<td><input type="text" name='R2_Disposition' value="${Service['r2_disposition']}"/></td>
 			</tr>
@@ -139,8 +139,6 @@
 				<td><b>Steel Thread:</b></td>
 				<td><input type="text" name='Steel_Thread' value="${Service['steel_thread']}"/></td>
 			</tr>
-			
-			
 			<tr>
 				<td><b>Modified Comment:</b></td>
 				<td><input type="text" name='ModifiedComment' value="${Service['modified_comment']}"/></td>
