@@ -180,7 +180,7 @@ public class ServiceController {
 	    	{
 	    		mv.addObject("Service", impl.searchById(id).get(0));
 	    		mv.setViewName("search");
-	    		mv.addObject("message","Service updated Sucessfully!");
+	    		mv.addObject("message","Service ID "+id+" updated Sucessfully!");
 	    	}
 	    	
 	    	return mv;
