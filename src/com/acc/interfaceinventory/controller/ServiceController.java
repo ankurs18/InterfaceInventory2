@@ -32,11 +32,13 @@ public class ServiceController {
 	@RequestMapping(value = "/performSearch", method = RequestMethod.POST)
 	public ModelAndView performSearch(HttpServletRequest request, HttpServletResponse response) {
 		ServiceFacade serviceFacade = new ServiceImpl();
-		System.out.println("ankur" + request.getParameter("serviceId"));
+		System.out.println("Service ID : " + request.getParameter("serviceId"));
+		System.out.println("Release : " + request.getParameter("dropDown"));
 		ModelAndView mv = new ModelAndView();
 		// mv.addObject("allServices",
 		// serviceFacade.searchById(Integer.parseInt(request.getParameter("serviceId"))));
-		List<Service> list = serviceFacade.searchById(Integer.parseInt(request.getParameter("serviceId")));
+		List<Service> list = serviceFacade.searchById(Integer.parseInt(request.getParameter("serviceId")),request.getParameter("dropDown"));
+		System.out.println("List : " +list.toString());
 		if(list.size()>0)
 		{request.getSession().setAttribute("allServices",list);
 		mv.setViewName("searchOutput");
@@ -100,7 +102,7 @@ public class ServiceController {
     	String data_format = request.getParameter("DataFormat");
     	String provider_technology = request.getParameter("Provider_Technology");
     	System.out.println(request.getParameter("Scope"));
-    	Boolean scope = request.getParameter("Scope").equals("r1");
+    	String scope = request.getParameter("Scope");
     	String r1_disposition = request.getParameter("R1_Disposition");
     	
     	String r2_disposition = request.getParameter("R2_Disposition");
@@ -114,6 +116,7 @@ public class ServiceController {
     	String modified_comment = request.getParameter("ModifiedComment");
     	ServiceImpl impl=new ServiceImpl();
     	Service service =impl.addElement(id, source_inventory, Interface_name, description, Interface_grp, bussiness_func, bussiness_process, segment, LOB, entities, connection_method, transport, connection_frequency, data_format, provider_technology, r1_disposition, r2_disposition, asynch_synch, service_provider, pattern, interface_complexity, prov_adap_details, steel_thread, (Date)null, modified_comment, scope);
+    	System.out.println("Service value : " +service);
     	if(service==null)
     	{
     		mv.setViewName("Error");
@@ -166,19 +169,21 @@ public class ServiceController {
 	    	String interface_complexity = request.getParameter("Complexity");
 	    	String prov_adap_details = request.getParameter("ProviderDetail");
 	    	String steel_thread = request.getParameter("Steel_Thread");
-	    	boolean scope = request.getParameter("Scope").equals("r1");
-	    	
+	    	String scope = request.getParameter("Scope");
+	    	System.out.println(request.getParameter("Scope"));
 	    	String modified_comment = request.getParameter("ModifiedComment");
 	    	ServiceImpl impl=new ServiceImpl();
 	    	int result=impl.modify(id, source_inventory, Interface_name, description, Interface_grp, bussiness_func, bussiness_process, segment, LOB, entities, connection_method, transport, connection_frequency, data_format, provider_technology,r1_disposition, r2_disposition, asynch_synch, service_provider, pattern, interface_complexity, prov_adap_details, steel_thread, (Date)null, modified_comment, scope);
+	    	System.out.println("result" +result);
 	    	if(result==0)
 	    	{
-	    		mv.setViewName("Error");
+	    		mv.setViewName("search");
+	    		mv.addObject("message","SERVICE ID "+id+" UPDATION FAILED!");
 	    		
 	    	}
 	    	else if(result==1)
 	    	{
-	    		mv.addObject("Service", impl.searchById(id).get(0));
+	    		mv.addObject("Service", impl.searchById(id, scope).get(0));
 	    		mv.setViewName("search");
 	    		mv.addObject("message","Service ID "+id+" updated Sucessfully!");
 	    	}

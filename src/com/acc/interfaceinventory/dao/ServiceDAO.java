@@ -5,10 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import com.acc.interfaceinventory.entity.Service;
 import com.acc.interfaceinventory.helper.Constants;
@@ -20,15 +18,24 @@ public class ServiceDAO {
 	private PreparedStatement statement;
 	private Service service;
 
-	public List<Service> searchById(int id){
+	public List<Service> searchById(int id, String scope){
 		List<Service> listServices = new ArrayList<Service>();
 		try {
 			connection = DataConnection.createConnection();
-		
+		if(scope!=null){
 		statement = connection.prepareStatement(Constants.GETSERVICESQUERY);
 		statement.setInt(1, id);
+		statement.setBoolean(2, scope.equals("r1"));
 		resultSet = statement.executeQuery();
+		}
+		else
+		{
+			statement = connection.prepareStatement(Constants.GETSERVICESQUERYBYID);
+			statement.setInt(1, id);
+			resultSet = statement.executeQuery();
+		}
 		
+		//System.out.println(statement.toString());
 		while (resultSet.next()) {
 			service = new Service(resultSet.getString("source_inventory"), resultSet.getString("interfacename"), resultSet.getString("description"), resultSet.getString("interface_category"), resultSet.getString("business_function"), resultSet.getString("business_process"), resultSet.getString("segment"), resultSet.getString("lob"), resultSet.getString("entities_exchange"), resultSet.getString("connection_method"), resultSet.getString("transport"), resultSet.getString("connection_frequency"), resultSet.getString("data_format"), resultSet.getString("provider_technology"), resultSet.getString("r1_disposition"), resultSet.getString("r2_disposition"), resultSet.getString("asynch_synch"), resultSet.getString("service_provider"), resultSet.getString("pattern"), resultSet.getString("interface_complexity"), resultSet.getString("provider_detail"), resultSet.getString("steel_thread"), resultSet.getString("modified_comment"), resultSet.getDate("last_modification"), resultSet.getInt("id") , resultSet.getBoolean("scope"));
 			listServices.add(service);
@@ -44,8 +51,9 @@ public class ServiceDAO {
 		return listServices;
 		
 	}
+	
 	public int delete(Service service){
-		List<Service> listServices = new ArrayList<Service>();
+		
 		int status = 0;
 		try {
 			connection = DataConnection.createConnection();
@@ -92,7 +100,7 @@ public class ServiceDAO {
 		
 	}
 	public Service addEntry(Service service){
-		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		
 		Date date = new Date();
 		java.sql.Date sqlDate = new java.sql.Date(date.getTime()); 
 		service.setLast_modification(sqlDate);
@@ -145,7 +153,7 @@ public class ServiceDAO {
 		
 	}
 	public int modifyEntry(Service service){
-		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		
 		Date date = new Date();
 		java.sql.Date sqlDate = new java.sql.Date(date.getTime()); 
 		try {
@@ -197,11 +205,6 @@ public class ServiceDAO {
 	}
 	
 	
-	public static void main(String args[]){
-		List<Service> list= new ServiceDAO().searchById(479);
-		for(Service s:list)
-		{
-			System.out.println(s.toString());
-		}
-	}
+	
+	
 }

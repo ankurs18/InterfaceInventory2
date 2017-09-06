@@ -5,7 +5,7 @@ import java.sql.Date;
 public class Service {
 
 	private String source_inventory, interfacename, description, interface_category, business_function, business_process, segment, lob, entities_exchange, connection_method, transport, connection_frequency, data_format, provider_technology, r1_disposition, r2_disposition, asynch_synch, service_provider, pattern, interface_complexity, provider_detail, steel_thread, modified_comment;
-	private boolean scope;
+	private Boolean scope;
 	private Date last_modification;
 	private int id;
 	public String getSource_inventory() {
@@ -170,7 +170,7 @@ public class Service {
 	public void setModified_comment(String modified_comment) {
 		this.modified_comment = modified_comment;
 	}
-	public void setScope(boolean scope) {
+	public void setScope(Boolean scope) {
 		this.scope = scope;
 	}
 	
@@ -186,7 +186,7 @@ public class Service {
 			String provider_technology, String r1_disposition, String r2_disposition, String asynch_synch,
 			String service_provider, String pattern, String interface_complexity, String provider_detail,
 			String steel_thread, String modified_comment, Date last_modification,
-			int id, boolean scope) {
+			int id, Boolean scope2) {
 		super();
 		this.source_inventory = source_inventory;
 		this.interfacename = interfacename;
@@ -214,6 +214,6 @@ public class Service {
 		
 		this.last_modification = last_modification;
 		this.id = id;
-		this.scope = scope;
+		this.scope = scope2;
 	}
 }

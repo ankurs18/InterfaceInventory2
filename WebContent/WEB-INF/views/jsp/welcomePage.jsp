@@ -12,6 +12,10 @@
 
 </head>
 <body style="font-family: 'Amaranth';">
+	<%
+   String name = request.getParameter( "username" );
+   session.setAttribute( "theName", name );
+%>
 	<header>
 		<img alt="header" src="./resources/Banner_3.JPG" style="width: 100%; height: 150px;">
 		
@@ -26,13 +30,14 @@
 	<div align="Center">
 	
 	<h1>
-		<%	
+		Welcome, <%= (String)session.getAttribute( "theName" ) %> to Interface Inventory
+		<%-- <%	
 			LoginBean bean = (LoginBean) request.getAttribute("User");
 		if(bean!=null)	
 		out.print("Welcome, " + bean.getUsername() + " to Interface Inventory");
 		else
 			out.print("Welcome, user1 to Interface Inventory");
-		%>
+		%> --%>
 	</h1> 
 	<table>
 		

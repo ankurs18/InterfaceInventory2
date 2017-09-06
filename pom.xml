@@ -48,6 +48,7 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		<!-- MySQL JDBC driver -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -69,12 +70,28 @@
 			<artifactId>jstl</artifactId>
 			<version>${jstl.version}</version>
 		</dependency>
-				<dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>javax.servlet-api</artifactId>
-    <version>3.1.0</version>
-    <scope>provided</scope>
-</dependency>
+		<dependency>
+    			<groupId>javax.servlet</groupId>
+   				<artifactId>javax.servlet-api</artifactId>
+    			<version>3.1.0</version>
+			 	<scope>provided</scope>
+		</dependency>
+		
+		 <!-- Spring Security Artifacts - START -->
+      <!-- http://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+      <dependency>
+          <groupId>org.springframework.security</groupId>
+          <artifactId>spring-security-web</artifactId>
+          <version>4.0.4.RELEASE</version>
+      </dependency>
+ 
+      <!-- http://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
+      <dependency>
+          <groupId>org.springframework.security</groupId>
+          <artifactId>spring-security-config</artifactId>
+          <version>4.0.4.RELEASE</version>
+      </dependency>
+      <!-- Spring Security Artifacts - END -->
 		</dependencies>
 		
 </project>

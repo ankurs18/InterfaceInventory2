@@ -26,25 +26,17 @@
          org.springframework.web.context.ContextLoaderListener
       </listener-class>
    </listener>
-<!-- <security-constraint>
-    <web-resource-collection>
-        <web-resource-name>JSP Files</web-resource-name>
-        <description>No direct access to JSP files</description>
-        <url-pattern>/WEB-INF/views/jsp/</url-pattern>
-        <http-method>POST</http-method>
-        <http-method>GET</http-method>
-    </web-resource-collection>
-    <auth-constraint>
-        <description>No direct browser access to JSP files</description>
-        <role-name>NobodyHasThisRole</role-name>
-    </auth-constraint>
-</security-constraint> -->
-<!-- <security-constraint> 	
-	<web-resource-collection> 		
-		<web-resource-name>placeorder</web-resource-name> 		
-		<url-pattern>/*.jsp</url-pattern> 		
-		<http-method>POST</http-method> 		
-		<http-method>GET</http-method> 	
-	</web-resource-collection> 	
-</security-constraint> -->
+   <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>JSP Files</web-resource-name>
+            <description>No direct access to JSP files</description>
+            <url-pattern>/views/jsp/*</url-pattern>
+            <http-method>POST</http-method>
+            <http-method>GET</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>No direct browser access to JSP files</description>
+            <role-name>NobodyHasThisRole</role-name>
+        </auth-constraint>
+    </security-constraint>
 </web-app>  

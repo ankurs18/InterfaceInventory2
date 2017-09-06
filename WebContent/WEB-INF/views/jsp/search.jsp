@@ -28,6 +28,7 @@
         </script>
 </head>
 <body style="font-family: 'Amaranth';">
+	
 	<header>
 		<img alt="header" src="./resources/Banner_3.JPG" style="width: 100%; height: 150px;">
 		
@@ -39,23 +40,39 @@
 		<a href="login">Logout</a> 
 	</h4>
 	</div>
-	<div align="center">
-<h1>Please Enter the Service ID : </h1>
-<form action="performSearch" name="SearchForm" method="post">
-	<input style="font-family: 'Aclonica';" type="text" name="serviceId" id="serviceId" onblur="return check()"/>	
-	<input style="font-family: 'Aclonica';" value="Search" type="submit" onclick="return check()"/>
-	<input style="font-family: 'Aclonica';" value="Reset" type="reset"><br>
-	<br/>
-	<span id="search"></span>
-	<br/>
-	<br/>
-	<%
+	
+	<h1 align="center">Search Inventory</h1>
+	<br>
+	<form action="performSearch" name="SearchForm" method="post">
+		<div align="center">
+		<label>Enter Service ID :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input style="font-family: 'Aclonica'; width: 150px;" type="text" name="serviceId" id="serviceId" onblur="return check()"/>
+		<br/>
+		<label>Please Choose Release :</label>
+						<select name ="dropDown" id="dropdown">
+								<option value = "-1" disabled selected hidden>Please Choose...</option>
+								<option id="scope_r1" value="r1">Release 1</option>
+								<option id="scope_r1" value="r2">Release 2</option>
+						</select>
+						<br/><br/>
+		<input style="font-family: 'Aclonica';" value="Search" type="submit" onclick="return check()"/>
+		<input style="font-family: 'Aclonica';" value="Reset" type="reset"><br>
+		<br/>
+			<span id="search"></span>
+			<br/>
+			<br/>
+			<%
 				if (request.getAttribute("message") != null)
 					out.print(request.getAttribute("message"));
 			%>
-</form>
+		</div>
+		
+	</form>
 	
-	</div>
+	
+	
+	
+	
 	<div class="footer"
 		style="position: absolute; width: 100%; bottom: 0; color: Black">
 		<hr>

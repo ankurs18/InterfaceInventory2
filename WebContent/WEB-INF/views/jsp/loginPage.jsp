@@ -25,6 +25,11 @@ function validate(){
 </script>
 </head>
 <body style="font-family: 'Aclonica'" class="bodyStyle">
+
+	<%
+   String name = request.getParameter( "username" );
+   session.setAttribute( "theName", name );
+	%>
 	<div align="right">
 		<h4>
 			<a href="AboutInterfaceInventory" style="font-family:Comic Sans MS; color: white">About

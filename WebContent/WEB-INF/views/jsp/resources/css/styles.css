@@ -11,6 +11,9 @@
  position: absolute;
   width: 100%;bottom: 0;
 }
+#dropdown{
+ width:150px;   
+}
 .bodyStyle {   	 
      background-image: url('../background.jpg');  
    }
@@ -24,4 +27,5 @@
    	 font-family: 'Aclonica';
    	 font-family: Aclonica;
    }
+ 
    
