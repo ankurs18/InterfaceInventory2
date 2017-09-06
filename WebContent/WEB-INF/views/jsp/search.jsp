@@ -10,10 +10,10 @@
 <script>          
             function check()
         	{
-        	     if(SearchForm.serviceId.value.length==0)
+        	      if(SearchForm.serviceId.value.length==0)
         	     {
-        	        document.getElementById('search').innerHTML="Please Enter Numeric Value"; 
-        	        return false;
+        	        document.getElementById('serviceId').value="0"; 
+        	        return true;
         	     }
         	     if(isNaN(SearchForm.serviceId.value))
         	     {
